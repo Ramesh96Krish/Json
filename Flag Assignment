@@ -1,0 +1,15 @@
+let request = new XMLHttpRequest();
+request.open("GET", "https://restcountries.com/v2/all");
+request.onload = () => 
+{
+console.log(request.status);
+console.log(request.statusText);
+let a=[];
+a=JSON.parse(request.response);
+for (let i=0;i<a.length; i++)
+console.log(a[i].flags.png)  
+}
+request.onerror = (er) => {console.log(er);
+console.log(request.statusText);
+console.log(request.status);};
+request.send();
